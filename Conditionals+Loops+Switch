@@ -1,0 +1,96 @@
+//Switch Statement
+var rank = "Commander";
+switch(rank)
+{
+    case "Private":
+    case "Sergeant":
+        console.log("You are not authorized.");
+        break;
+    case "Commander":
+        console.log("Hello commander! what can I do for you today?");
+        break;
+    case "Captain":
+        console.log("Hello captain! I will do anything you wish.");
+        break;
+    default:
+        console.log("I don't know what your rank is.");
+        break;
+}
+
+//Not Equal to
+var notTrue = false;
+if (!notTrue)
+{
+    console.log("not not true is true!");
+}
+
+//If Statement
+if (confirm("Are you John Smith?"))
+{
+    console.log("Hello John, how are you?");
+} else {
+    console.log("Then what is your name?");
+}
+
+
+
+//////////////////////////
+var foo = 1;
+var bar = 2;
+
+//If Example 2
+if (foo < bar)
+{
+    console.log("foo is smaller than bar.");
+}
+//If Example 3
+
+var foo = 1;
+var bar = 2;
+var moo = 3;
+
+if (foo < bar && moo > bar)
+{
+    console.log("foo is smaller than bar AND moo is larger than bar.");
+}
+
+if (foo < bar || moo > bar)
+{
+    console.log("foo is smaller than bar OR moo is larger than bar.");
+}
+
+//For Loop example 1
+for (var i = 0; i < 3; i++)
+{
+    console.log(i);
+}
+/////////////////////////
+
+//For Loop example 2(iterate through an entire array)
+var myArray = ["A", "B", "C"];
+for (var i = 0; i < myArray.length; i++)
+{
+    console.log("The member of myArray in index " + i + " is " + myArray[i]);
+}
+
+/////////////////////////////
+//While loop(iterate through the code only if the condition is met)
+var i = 99;
+while (i > 0)
+{
+    console.log(i + " bottles of beer on the wall");
+    i -= 1;
+}
+
+
+//While loop example 2
+var i = 99;
+while (true)
+{
+    console.log(i + " bottles of beer on the wall");
+    i -= 1;
+    if (i == 0)
+    {
+        break;
+    }
+}
