@@ -19,7 +19,7 @@ let bio = document.querySelectorAll('.bio');
 function bioTxt(){
    bio.oldText = bio.innerText;
    bio.innerText=bio.innerText.substring(0,100)+"...";
-   bio.innerHTML += "&nbsp;"+ '<span onclick='addLength()' id='see-more-bio'> See More </span>';
+   bio.innerHTML += "&nbsp;"+ '<span onclick='+addLength()+' id='+see-more-bio+'> See More </span>';
    
    
 }
@@ -27,6 +27,6 @@ bioTxt();
 //Collapses
 function addLength(){
    bio.innerHTML = bio.oldText;
-   bio.innerHTML += "&nbsp;"+ '<span onclick='bioTxt()' id='see-less-bio'> See Less </span>';
+   bio.innerHTML += "&nbsp;"+ '<span onclick='+bioTxt()+' id='+see-less-bio+'> See Less </span>';
    
 }
