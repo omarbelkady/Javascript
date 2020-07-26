@@ -5,6 +5,7 @@ $('.navigation ul li').click(function(){
 const tabBtn=document.querySelectorAll('.nav ul li');
 const tab=document.querySelectorAll('.tab');
 
+
 function tabs(panelIndex){
    tab.forEach(function(node){
       node.style.display = 'none';
