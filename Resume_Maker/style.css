@@ -1,0 +1,16 @@
+*{
+	margin: 0;
+	padding:0;
+	box-sizing: border-box;
+}
+body{
+	background: #efefef;
+}
+.profile-img{
+	width:40%;
+	float:right;/*Align image to the right*/
+}
+.profile-img img{
+	width:100%;
+	height:100%;
+}
