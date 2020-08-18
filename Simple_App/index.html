@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie-edge"/>
+		<title>Todo list</title>
+		<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script defer src= "script.js"></script>
+	</head>
+<body>
+	<h1 class="title">Things to be ticked off</h1>
+	<div class="all-tasks">
+		<h2 class="task-list-title">My lists</h2>
+		<ul class="task-list" data-lists>
+			<li class="list-name active-list">Homework</li>
+			<li class="list-name">Work</li>
+			<li class="list-name">Grocery Items</li>
+		</ul>
+		<form action="" data-new-list-form>
+		<input
+			type="text" 
+			class= newlist"
+			placeholder="new list name" 
+			aria-label="new list name"
+		/>
+		<button class="btn-create" aria-label="create new list">+</button>
+		</form>
+	</div>
+	
+	<div class="todo-list" data-list-display-container>
+		<div class="todo-header">
+			<h2 class="list-title" data-list-title>Blabla</h2>
+			<p class="task-count" data-list-count>3 tasks remaining</p>
+		</div>
+
+		<div class="todo-body">
+			<div class="tasks" data-tasks>
+				<div class="task">
+					<input
+						type="checkbox"
+				       		id="task-1"
+				       />
+				<label for="task-1">
+					<span class="custom-checkbox"></span>
+					take note of this
+				</label>
+			</div>
+			<!-- /TASK #1 -->
+
+			<div class="task">
+				<input 
+			     		type"checkbox"
+					id="task-2"
+				       />
+				<label for ="task-2">
+					<span class="custom-checkbox"></span>
+					another different task
+				</label>
+			</div>
+			<!--TASK #2 -->
+
+			
+			<div class="task">
+				<input 
+			     		type"checkbox"
+					id="task-2"
+				       />
+				<label for ="task-3">
+					<span class="custom-checkbox"></span>
+					a third task
+				</label>
+			</div>
+			<!--TASK #3 -->
+		</div>
+
+		<div class="new-task-creator">
+			<form action="">
+				<input
+					type="text"
+					class="new task"
+					placeholder= "new task name"
+					aria-label="new task name"
+				/>
+				<button class="btn create" aria-label="create new task">+</button>
+			</form>
+		</div>
+
+		<div class= "delete-stuff">
+			<button class="btn delete"> Clear Completed Chores</button>
+			<button class="btn delete" data-delete-list-button> Delete the List </button>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+

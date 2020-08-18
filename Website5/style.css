@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.header{
+	width: 100%;
+	height: 100vh;
+						/*The purpose of the rgba is to create a dark layer on the image*/
+	background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(images/background4.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 100px;
+}
+/*Align the navigation bar horizontally*/
+.navbar{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	/*Space between two elements*/
+	justify-content: space-between;
+	padding: 25px 0;
+}
+
+/*Align the navigation bar to the far right*/
+nav{
+	flex: 1;
+	text-align: right;
+}
+
+.logo{
+	width: 120px;
+	cursor: pointer;
+}
+.user-icon{
+	width: 30px;
+	border-radius:50%;
+	cursor: pointer;
+}
+
+/*Design the navigation menu*/
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	margin-right: 30px;
+}
+
+nav ul li a{
+	text-decoration:none;
+	color: #fff;
+	font-size: 14px;
+	padding: 5px 2px;
+}
+
+/*Adding a hover effect on the menu*/
+nav ul li a:hover{
+	border-bottom: 1px solid #ff6b3f;
+}
+
+.content{
+	max-width: 600px;
+	color: #fff;
+	margin-top: 15%;
+}
+
+h1{
+	font-size: 56px;
+	line-height: 70px;
+	letter-spacing: 1px;
+	margin: 15px 0px;
+}
+
+p{
+	font-size: 12px;
+	line-height: 22px;
+}
+span{
+	color: #223ad6;
+}
+.btn-box{
+	margin-top: 20px;
+}
+button{
+	width: 160px;
+	border: 1px solid #ff6b3f;
+	color: #fff;
+	padding: 10px;
+	margin-right: 10px;
+	border-radius: 25px;
+	cursor: pointer;
+	background: #ff6b3f;
+}
+.btn{
+	border: 1px solid #fff;
+	background: transparent;
+}
+
+.sidebar{
+	width: 80px;
+	height: 100vh;
+	background: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.logo-icon{
+	width: 30px;
+	margin: 30px;
+	cursor:pointer;
+}
+
+.social-links{
+	width: 80px;
+	position: absolute;
+	bottom: 20px;
+}
+
+.social-links img{
+	height: 15px;
+	display: block;
+	margin: 25px auto;
+	cursor: pointer;
+}
