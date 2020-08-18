@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Augmented Reality WS</title>
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+	<!-- THE FOLLOWING TWO SCRIPTS CAN BE FOUND IN modelviewer.dev-->
+	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+	<script nomodule src= "https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		.robot-fs{
+			height: 100vh;
+			width:100%;
+		}
+
+		.robot-fs model-viewer{
+			width: 100%;
+			height: 100%;
+		}
+		.btn-container{
+			position: absolute;
+			bottom: 50px;
+			width: 100%;
+			text-align: center;
+		}
+		button{
+			border: none;
+			background:#C01515;
+			height: 40px;
+			width: 150px;
+			margin: 5px 15px;
+			cursor: pointer;
+			font-weight: bold;
+			font-size: 17px;
+		}
+		button:focus{
+			outline: none;
+		}
+		
+
+	</style>
+
+</head>
+<body>
+	<!-- THE DIV THAT WILL MAKE THE ROBOT GO FULL SCREEN and the ar keyword after autoplay is augemented reality effect added to the animation-->
+	<div class="robot-fs">
+		<!--SKYBOX-IMAGE property  MAKES THE hdr image GO FULL SCREEN AND 360 and giving it animation by giving a value to animation-name-->
+		<model-viewer id="model" src="RobotExpressive.glb" alt="A 3D Nelan Robot" auto-rotate camera-controls skybox-image="stadium.hdr" animation-name="Running" autoplay ar></model-viewer>
+
+		<div class="btn-container">
+			<button type="button" onclick="stop()">STOP</button>
+			<button type="button" onclick="run()">RUN_TO_6342</button>
+			<button type="button" onclick="wave()">WAVE_TO_6342</button>
+		</div>
+	</div>
+	<!-- ABILITY TO DISPLAY 3D OBJ-->
+	<!-- GIVE ACTION TO OUR BUTTONS -->
+			<script>
+				var modelViewer = document.getElementById('model');
+				function stop(){
+					modelViewer.animationName='none';
+				}
+
+				function run()
+					modelViewer.animationName='Running';
+				}
+
+				function wave(){
+					modelViewer.animationName='Wave';
+
+
+			</script>
+</body>
+</html>
