@@ -1,0 +1,249 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Vollkorn', serif;
+	list-style-type: none;/*Removing the default list-type*/
+	text-decoration: none; /*Removing the default list-type*/
+	box-sizing: border-box;
+	outline: none;
+}
+
+/*Decreasing the default size of the html element*/
+html{
+	font-size: 62.5%;
+}
+
+/*Creating a css variable to have a global scope*/
+:root{
+	--primary-color: #2b81e4;
+	--secondary-color: #eee;
+	--white-color: #fff;
+	--grey-color: #555;
+	--light-grey-color: #777;
+}
+
+/*instead of creating every div for us to center it we will just give every html element a css class of center*/
+.center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	/*To be able to use the css variables we use the keyword var*/
+	background-color: var(--secondary-color);
+	margin: 3.5rem;
+	/*Creating a shadow effect*/
+	box-shadow: 0 1rem 3rem var(--grey-color);
+	overflow: hidden;
+}
+
+.header{
+	width: 100%;
+	/*100vh is 100 percent and I subtract 7rem from all four sides*/
+	height: calc(100vh-7rem);
+	background: linear-gradient(rgba(18,113,255,0.5),rgba(18,113,255,0.3)), url(images/parachute.jpg) center no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.header-text{
+	/*text-align: center;*/
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	/*Adding text shadow*/
+	text-shadow: 0 0.3rem 0.5rem var(--light-grey-color);
+}
+
+.heading{
+	font-size: 8rem;
+	color: var(--secondary-color);
+	/*perspective property defines how far an object is away from the user*/
+	perspective: 100rem;
+}
+
+.header-paragraph{
+	font-size: 3rem;
+	font-weight: 500;
+	color: var(--primary-color);
+	/*paragraph text too stretched out*/
+	max-width: 70rem;
+	/*Center text*/
+	margin: auto;
+}
+
+/*Creating a logo*/
+.logo{
+	position: absolute;
+	top: 4rem;
+	right: 4rem;
+}
+
+.logo h1{
+	display: flex;
+}
+
+.logo h1 span{
+	font-size: 2rem;
+	font-weight: 900;
+	color: blue;
+	text-transform: uppercase;
+	background-color: var(--white-color);
+	/*Defining the width and height of each letter*/
+	width: 3.5rem;
+	height: 3.5rem;
+	margin: 0.5rem;
+	border-radius: 50%;
+}
+
+.logo h1 span:nth-child(1)
+{
+	animation: drop-letters 7s 0.1s infinite;
+}
+
+
+.logo h1 span:nth-child(2)
+{
+	animation: drop-letters 7s 0.2s infinite;
+}
+
+
+.logo h1 span:nth-child(3)
+{
+	animation: drop-letters 7s 0.3s infinite;
+}
+
+.logo h1 span:nth-child(4)
+{
+	animation: drop-letters 7s 0.4s infinite;
+}
+
+.logo h1 span:nth-child(5)
+{
+	animation: drop-letters 7s 0.5s infinite;
+}
+
+.logo h1 span:nth-child(6)
+{
+	animation: drop-letters 7s 0.6s infinite;
+}
+
+.logo h1 span:nth-child(7)
+{
+	animation: drop-letters 7s 0.7s infinite;
+}
+
+.logo h1 span:nth-child(8)
+{
+	animation: drop-letters 7s 0.8s infinite;
+}
+
+.logo h1 span:nth-child(9)
+{
+	animation: drop-letters 7s 0.9s infinite;
+}
+
+.logo h1 span:nth-child(10)
+{
+	animation: drop-letters 7s 1.0s infinite;
+}
+
+
+
+/*Animation keyframes namewhatyouwan*/
+@keyframes drop-letters{
+	0%{
+		transform: translateY(0);
+	}
+	10%{
+		transform: translateY(0);
+	}
+	15%{
+		transform: translateY(-100%);
+	}
+	20%{
+		transform: translateY(0);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+
+.header-image{
+	width: 35%;
+	animation: image-float 150s infinite;
+}
+
+@keyframes image-float{
+	0%{
+		transform: translateZ(40rem);
+		opacity: 1;
+	}
+	
+	40%{
+		/*                translateX(150rem) means move the image a bit to the right side*/
+		transform: translateZ(-500rem) translateX(150rem);
+		opacity: 0.8;
+	}
+
+
+	70%{
+		/*               translateZ(-1500) means move the move the image even deeper inside
+		 *               translateX(150rem) means move the image a bit to the right side*/
+		transform: translateZ(-1500rem) translateX(800rem);
+		opacity: 0.6;
+	}
+
+
+	80%{
+		/*                translateX(150rem) means move the image a bit to the right side*/
+		transform: translateZ(-50rem) translateX(100rem);
+		opacity: 0.8;
+	}
+
+	/*Remember 100% has to equal 0% for it to be looping the animation*/
+	100%{
+		transform: translateZ(40rem);
+		opacity: 1;
+	}
+}
+
+.popular-tours{
+	padding: 5rem 0 10rem 0;
+}
+
+.popular-tours-heading{
+	font-size: 9rem;
+	text-align: center;
+	margin-bottom: 9rem;
+	color: var(--primary-color);
+	text-shadow: 0 0.1rem 0.2rem var(--primary-color);
+}
+
+/*Align the cards side by side*/
+.cards-wrapper{
+	display: flex;
+
+	/*even space between each card*/
+	justify-content: space-evenly;
+}
+
+/*Give each card a specific dimension*/
+.card{
+	width: 32rem;
+}
+
+/*This will inherit the width from the parent element card and when you want to make corners of an element rounded use border-radius property*/
+.card-image{
+	width: 100%;
+	/*border-radius: topleft topright bottomright bottomleft */
+	border-radius: 0.3rem 0.3rem 0 0;
+
+}
+
+.front-side{
+	text-align: center;
+	background-color: var(--white-color);
+	/*Make the front-side a bit rounded*/
+	border-radius: 0.4 rem;
+
