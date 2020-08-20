@@ -224,7 +224,7 @@ html{
 .cards-wrapper{
 	display: flex;
 	/*even space between each card*/
-	justify-content: space-around;
+	justify-content: flex-start;
 }
 
 /*Give each card a specific dimension*/
