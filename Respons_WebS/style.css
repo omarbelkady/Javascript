@@ -223,9 +223,8 @@ html{
 /*Align the cards side by side*/
 .cards-wrapper{
 	display: flex;
-
 	/*even space between each card*/
-	justify-content: space-evenly;
+	justify-content: space-around;
 }
 
 /*Give each card a specific dimension*/
@@ -245,5 +244,33 @@ html{
 	text-align: center;
 	background-color: var(--white-color);
 	/*Make the front-side a bit rounded*/
-	border-radius: 0.4 rem;
+	border-radius: 0.4rem;
+	/*to positon the child relative to its parent*/
+	position: relative;
+}
 
+.tour-name{
+	font-size: 2.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	position: absolute;
+	top:40%;
+	right: 1.5rem;
+	color: var(--white-color);
+	text-shadow: 0 0 2rem #000;
+}
+
+.card-list{
+	width:80%;
+	margin: auto;
+	/*Create space within the list*/
+	padding: 2rem 0rem 3rem 0;/
+}
+
+.card-list-item{
+	font-size:1.7rem;
+	font-weight: 500;
+	color: var(--light-grey-color);
+	margin: 2rem 0;
+	border-bottom: 0.1rem solid var(--primary-color);
+}
