@@ -225,11 +225,13 @@ html{
 	display: flex;
 	/*even space between each card*/
 	justify-content: flex-start;
+	/*Added padding*/
+	padding: 25px 50px 25px;
 }
 
 /*Give each card a specific dimension*/
 .card{
-	width: 32rem;
+	width: 25rem;
 }
 
 /*This will inherit the width from the parent element card and when you want to make corners of an element rounded use border-radius property*/
