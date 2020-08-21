@@ -18,7 +18,7 @@ const colors = ['#6495ed','#7fffd4','#ffa07a','#f08080', '#afeeee'];
 let i = 0
 
 /*query through the array of colors and I have to first transform node listi into an array*/
-Array.from(document.querySelectorAll('.nav-link')),forEach((item) => {
+Array.from(document.querySelectorAll('.nav-link')).forEach((item) => {
 	item.style.cssText =`background-color:${colors[i++]
 	}`; 
 });
