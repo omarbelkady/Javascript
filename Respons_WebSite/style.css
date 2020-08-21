@@ -193,6 +193,10 @@
 /*Give each card a specific dimension*/
 .card{
     width: 30rem;
+    /*I give the card a position of relative to position my buttons relative to the card*/
+    position: relative;
+    /*Create a 3d property to switch between front and back*/
+    perspective:150rem;
 }
 
 /*This will inherit the width from the parent element card and when you want to make corners of an element rounded use border-radius property*/
@@ -210,7 +214,21 @@
     border-radius: 0.4rem;
     /*to positon the child relative to its parent*/
     position: relative;
+    z-index: 10;
+    opacity: 0.9;
+    /*creating a smoother transition*/
+    transition: opacity 0.4s, transform 0.4s, box-shadow 0.4s;
 }
+
+/*Creating a css classname and using the css property class Selector by using the > symbol
+ * A class Selector selects all the elements that are the children of a specified e.g. 6342+2526="Nelan"*/
+.change > .front-side{
+	transform: translateZ(-5rem) translateX(3rem);
+	box-shadow(0.2rem 4rem #777);
+	opacity: 0.5;
+	z-index: 0;
+}
+
 
 .tour-name{
     font-size: 2.5rem;
@@ -236,4 +254,319 @@
     color: var(--light-grey-color);
     margin: 2rem 0;
     border-bottom: 0.1rem solid var(--primary-color);
+    padding-bottom: 1.5rem;
 }
+
+/*Styling the back-side button and positioning*/
+.back-side{
+	position: absolute;
+	top: 0;
+	background: var(--primary-color);
+	width: 100%;
+	height: 100%;
+	/*rounding it thanks to the border-radius property*/
+	border-radius: 0.3rem;
+	box-shadow: 0 2rem 4rem #777;
+	/*Price, back button and Booking Button will now be on each separate line*/
+	flex-direction: column;
+	/*be able to move the back-side and move it a bit to the right*/
+	transform: translateZ(-5rem) translateX(3rem);
+	opacity:0.5;
+	/*Creating a transition effect to go from the from to the back*/
+	transition: opacity 0.4s, transform 0.4s, box-shadow 0.4s;
+}
+
+
+.change > .back-side{
+	transform: translateZ(0) translateX(0);
+	box-shadow(0.5rem 2rem #aaa);
+	opacity: 0.9;
+}
+
+.tour-price{
+	font-size: 0.6rem;
+	font-weight: 305;
+	color: var(--white-color);
+	margin-bottom: 3rem;
+}
+
+/*styling the card button*/
+.card-button{
+	color: var(--primary-color);
+	background-color: var(--primary-color);
+	border: none;
+	font-size: 2.6rem;
+	/*Creating some space within the card*/
+	padding: 1rem 2rem;
+	letter-spacing: 0.2rem;
+	/*Changing the button shape from rectangular to circular*/
+	border-radius:5rem;
+	cursor: pointer;
+}
+
+/*Styling the navigation button*/
+.navigation-button{
+	/*set its position to the top left*/
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	/*customizing the button*/
+	padding: 0.5rem;
+	background-color: rgba(255,255,255,0.8);
+	color: var(--light-grey-color);
+	/*making the button rounded*/
+	border-radius: 0.3rem;
+	/*removing the default border*/
+	border: none;
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	cursor: pointer;
+}
+
+/*Stories*/
+.stories{
+	/*Creating space at the top and bottom*/
+	padding: 10rem 0;
+	position: relative;
+}
+
+.video-container{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.4;
+}
+
+.bg-video{
+	/*preserving the video quality*/
+	width: 100%;
+	height; 100%;
+	object-fit: cover;
+}
+
+
+.stories-wrapper{
+	/*place stories in the center vertically display: flex aligns elements side by side horizontally which means I have to change the orientation by using flex-direction*/
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.story-bg{
+	background-color: rgba(238,238,238,0.85);
+	padding: 5rem;
+	/*Create space around the background*/
+	margin: 5rem;
+	width: 70%;
+	/*Create shadow effect*/
+	box-shadow: 0 2rem 5rem rgba(51,51,51,0.4);
+	/*skew the user story*/
+	transform: skewX(20deg);
+}
+
+/*Unskew the story text*/
+.story{
+	transform: skewX(-20deg);
+	/*place image and text side by side*/
+	display: flex;
+}
+
+
+/*Changing the image size*/
+.story-image{
+	width: 20rem;
+	height: 20rem;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 5rem;
+}
+
+.story-text{
+	letter-spacing: 0.1rem;
+}
+
+
+.story-heading{
+	font-size: 2.5rem;
+	text-transform: uppercase;
+	color: var(--grey-color);
+	/*Create space around the bottom*/
+	margin-bottom: 1rem;
+}
+
+.story-paragraph{
+	font-size: 1.8rem;
+	color: var(--light-grey-color);
+}
+
+.story-paragraph::first-letter{
+	margin-left: 1rem;
+}
+
+/*Contact Section*/
+.contact{
+	padding: 15rem 0 20rem 0;
+	text-align: center;
+	background: url(images/contact-us-bg.png) center no-repeat;
+	background-size: cover;
+	/*assigning the animation to the section element*/
+	animation: contact-bg 35s infinite;
+}
+
+.contact-heading{
+	font-size: 7rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5rem;
+	color: var(--white-color);
+	text-shadow 0 1rem 2rem #000;
+	margin-bottom: 8rem;
+}
+
+.contact-form{
+	width: 70rem;
+	height: 50rem;
+	background-color: rgba(255,255,255,0.95);
+	/*center the form*/
+	margin: auto;
+	/*center the contents of the form*/
+	flex-direction: column;
+	border-radius: 0.5rem;
+	box-shadow: 0 1rem 3rem #000;
+	padding: 5rem;
+}
+
+.input-group{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	/*give some space between the input fields*/
+	margin: 1rem 0;
+	position: relative;
+}
+
+.input-groups{
+	width:100%;
+	/*place the phone and email side by side*/
+	display: flex;
+	justify-content: space-between;
+}
+
+.input-groups .input-group{
+	width: 48.5%;
+}
+
+.input-group input,
+.input-group textarea{
+	padding: 3rem 1rem 1rem 1rem;
+	background-color: var(--secondary-color);
+	border: 0.1rem solid var(--secondary-color);
+	font-size: 1.4rem;
+	color: var(--light-grey-color);
+	letter-spacing: 0.1rem;
+	border-radius: 0.5rem;
+	transition: border 0.3s;
+}
+
+
+.input-group input:focus,
+.input-group textarea:focus{
+	border: 0.1rem solid #ccc;
+}
+
+/*styling the input description of the input fields*/
+.input-group label{
+	font-size: 1.2rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	color: var(--grey-color);
+	/*placing the input description inside the fields from outside*/
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+}
+
+/*styling the submit button*/
+.form-btn{
+	width: 100%;
+	padding: 1rem;
+	font-size: 1.6rem;
+	letter-spacing: 0.1rem;
+	margin-top: 1rem;
+	background-color: var(--light-grey-color);
+	color: var(--wwhite-color);
+	/*making the button round*/
+	border-radius:0.5rem;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.4s;
+}
+
+.form-btn:hover{
+	background-color: var(--grey-color);
+}
+
+/*I am able to strech the message box I don't want that*/
+.input-group textarea{
+	max-height: 15rem;
+	max-width: 100%;
+}
+
+@keyframes contact-bg{
+	0%{
+		background-color: #3d3d3d;
+	}
+	25%{
+		background-color: #ced8e4;
+	}
+	50%{
+		background-color: #1e81f3;
+	}
+	75%{
+		background-color: #ff7842;
+	}
+	100%{
+		#3d3d3d;
+	}
+}
+
+.footer{
+	background-color: var(--grey-color);
+	padding: 4rem 0 2rem 0;
+}
+
+.footer-list{
+	display: flex;
+	justify-content: center;
+}
+
+.footer-link{
+	font-size: 2rem;
+	color: var(--white-color);
+	margin: 0 2rem;
+	background-color: #ff0000;
+	padding: 0.3rem 3rem;
+	letter-spacing: 0.3rem;
+	background-color: var(--grey-color);
+	transform: all 0.2s;
+}
+
+.footer-link:hover{
+	transform: rotate(-10deg);
+	box-shadow: 0 2rem 3rem #000;
+}
+
+.footer-paragraph{
+	text-align: center;
+	font-size: 1.5rem;
+	color: var(--secondary-color);
+	letter-spacing: 0.2rem;
+	margin-top: 5rem;
+}
+
+
