@@ -1,3 +1,29 @@
+/*Creating the container variable*/
+const container = document.querySelector('.container')
+
+/*selecting the element*/
+document.querySelector('.open-navbar-icon').addEventListener('click',() => {
+	container.classList.add('change');
+});
+
+/*When I click it I want to remove it from the container*/
+document.querySelector('.close-navbar-icon').addEventListener('click',() => {
+	container.classList.remove('change');
+});
+
+
+/*Creating an array of colors*/
+const colors = ['#6495ed','#7fffd4','#ffa07a','#f08080', '#afeeee'];
+
+let i = 0
+
+/*query through the array of colors and I have to first transform node listi into an array*/
+Array.from(document.querySelectorAll('.nav-link')),forEach((item) => {
+	item.style.cssText =`background-color:${colors[i++]
+	}`; 
+});
+
+
 /*Selecting the button thanks to document.querySelectorAll method*/
 /*returns an node list which is an array-like object
  * but I must tranform it into an array
@@ -17,4 +43,3 @@ Array.from(document.querySelectorAll(".navigation-button")).forEach((item)=>{
 		item.parentElement.parentElement.classList.toggle("change");
 	};
 });
-
