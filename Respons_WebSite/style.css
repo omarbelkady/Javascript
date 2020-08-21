@@ -72,6 +72,13 @@ html {
 	/*navbar went behind the header we can fix this thanks to z-index*/
 	z-index: 300;
 	padding: 3.5rem 5.5rem 3.5rem 3.5rem;
+	transition: bottom 0.5s, opacity: 0.2s;
+}
+
+.change .navbar-wrapper{
+	bottom: 0;
+	opacity: 1;
+	transition: bottom 0.5s, opacity: 0.2s 0.25s;
 }
 
 .navbar{
@@ -79,7 +86,8 @@ html {
 	height: 100%;
 	background-color: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url(images/navbar-bg.jpg) center no-repeat;
 	background-size: cover;;
-	position: relative
+	position: relative;
+	overflow-y: hidden;
 }
 
 /*I close the navigation bar icon*/
@@ -134,11 +142,41 @@ html {
 	transition: all 0.3s;
 }
 
+.change .nav-link{
+	top: 0;
+}
+
+
 /*I want to increase the opacity on hover and change the color*/
 .nav-link:hover{
 	opacity: 1;
 	color: var(--primary-color);
 }
+
+
+/*navigation elements display in order but fall one by one when I click the navigation button*/
+.change .nav-link:nth-child(1){
+	transition: top 1s 0.4s, opacity 0.3s, color 0.3s;
+}
+
+.change .nav-link:nth-child(2){
+	transition: top 1s 0.6s, opacity 0.3s, color 0.3s;
+}
+
+
+.change .nav-link:nth-child(3){
+	transition: top 1s 0.8s, opacity 0.3s, color 0.3s;
+}
+
+.change .nav-link:nth-child(4){
+	transition: top 1s 1s, opacity 0.3s, color 0.3s;
+}
+
+
+.change .nav-link:nth-child(5){
+	transition: top 1s 1.2s, opacity 0.3s, color 0.3s;
+}
+
 
 .header-text{
     /*text-align: center;*/
@@ -702,3 +740,155 @@ html {
 	letter-spacing: 0.2rem;
 	margin-top: 5rem;
 }
+
+/*making the website responsive so it doesn't damage the look of our website 
+ * if I go on another device. I preserve the quality and placing the cards vertically and adding space between them*/
+@media(max-width:1200px)
+{
+	.cards-wrapper{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.card{
+		margin: 3rem 0;
+	}
+
+	/*Increase the story background width*/
+	.story-bg{
+		width: 85%;
+	}
+}
+
+/*Adjusting the quality of by turning on inspector mode to know when will the site be funny and I adjust the dimensions to that
+ * using the css @media(max-width:#### px)
+ * When I make the width 1000px my navigation items seem too crammed
+ * I will changed their direction from vertical align to horizontally-aligned*/
+@media(max-width: 1000px)
+{
+	.nav-list{
+		flex-direction: column;
+	}
+
+	/*links are on the top of the page and not taking the space evenly they are cramed up top. I want to make sure the items take the available space inside 
+	 * the container*/
+	.nav-link{
+		flex-grow: 1;
+	}
+
+	/*Place the header text within the center of the page*/
+	.header-text{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		/*I want the animation to be behind the text not above it*/
+		z-index: 10;
+	}
+
+	.heading{
+		font-size: 6rem;
+	{
+	
+	.heading-paragraph{
+		font-size:2.5rem;
+	}
+	
+	.popular-tours-heading{
+		font-size: 6rem;
+	}
+
+	/*Unskewing the story-bg*/
+	.story-bg{
+		transform: skewX(0);
+	}
+
+	.story{
+		transform: skewX(0);
+		/*align the text vertically*/
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.story-image{
+		margin-bottom: 3rem;
+	}
+
+	.footer-link{
+		padding: 0.3rem 2rem;
+		margin: 0 1rem;
+	}
+}
+
+@media(max-width:800px)
+{
+	/*hiding the header paragraph because it doesn't fit*/
+	.header-paragraph{
+		display: none;
+	}
+
+	.popular-tours-heading{
+		font-size: 5rem;
+	}
+
+	.contact-form{
+		width: 90%;
+	}
+
+	/*place the links in the footer vertically because 
+	 * they are not fitting*/
+	.footer-list{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.footer-link{
+		margin: 1rem 0;
+	}
+}
+
+@media(max-width: 650px){
+
+	.container{
+		margin: 0;
+	}
+
+	.open-navbar-icon{
+		top: 2.5rem;
+		left: 2.5rem;
+	}
+
+	/*get rid of the space around the navigation*/
+	.navbar-wrapper{
+		padding: 0;
+	}
+
+	.close-navbar-icon{
+		right: 4rem;
+	}
+
+	.header{
+		height: 100vh;
+	}
+
+	.contact-heading{
+		font-size: 6rem;
+	}
+
+	.contact-form{
+		padding: 2rem;
+		height: 40rem;
+	}
+}
+
+/*Creating the smallest restriction for responsiveness*/
+@media(max-width: 500px)
+{
+
+	html{
+		font-size: 45%;
+	}
+}
+
+
+
