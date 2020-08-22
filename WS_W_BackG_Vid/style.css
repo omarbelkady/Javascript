@@ -1,0 +1,125 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.main{
+	height: 100vh;
+	width: 100%;
+	background-image: url(images/background.png);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+}
+.logo{
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*since sidebar is above logo I use the z-index property to display it right below it and within the same layer*/
+	z-index: 2;
+}
+
+/*Decrease the size of logo*/
+.logo img{
+	width: 80px;
+}
+
+/*Text is not showing up because hidden behind logo*/
+.sidebar{
+	width: 250px;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background: rgba(255,255,255,0.6);
+	position: absolute;
+}
+/*Text is not placed at the top I will rotate it and push it down*/
+.text-box{
+	transform: rotate(-90deg);
+	position: absolute;
+	top: 45%;
+	text-align: center;
+}
+
+
+.text-box h1{
+	font-size: 28px;
+	font-weight: 100;
+}
+
+.text-box h4{
+	margin: 7px 0 10px;
+}
+
+.line{
+	width; 80px;
+	height: 1px;
+	margin: auto;
+	background: #000;
+}
+/*text is behind logo make it show and place it up top up is -50% furthest down is 50% for translateY*/
+.content{
+	color: #fff;
+	position: absolute;
+	right: 200px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.content h1{
+	font-size: 100px;
+}
+
+.content p{
+	margin: 10px 0 40px;
+}
+
+/*make the button size smaller*/
+.btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 170px;
+	padding: 10px 0;
+	background: #fff;
+	color: #000;
+	/*making the button rounded*/
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.btn img{
+	width: 30px;
+	margin-right: 15px;
+}
+
+#backVideo{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	/*adding a display property to only show the video when we click the button*/
+	display: none;
+}
+
+/*setting the minimum aspect ratio when rendering the video*/
+@media(min-aspect-ratio: 16/9){
+	#backVideo{
+		width: 100%;
+		height: auto;
+	}
+}
+
+
+/*setting the maximum aspect ratio when rendering the video*/
+@media(max-aspect-ratio: 16/9){
+	#backVideo{
+		width: auto;
+		height: 100%;
+	}
+}
+
+

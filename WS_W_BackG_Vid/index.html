@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WS With BVideo</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="main">
+	<!-- main=hero -->
+		<video autoplay loop plays-inline id="backVideo">
+			<source src="images/video.mp4" type="video/mp4">
+		</video>
+			<div class="logo">
+				<img src="images/logo.gif"/>
+			</div>
+
+			<div class="sidebar">
+				<div class="text-box">
+					<h1>2526 56837 829567 79438</h1>
+					<h4>HE ENJOY TO LEARN ABOUT 266745377</h4>
+
+					<div class="line"></div>
+				</div>
+			</div>
+			<div class="content">
+				<h1>Call 63526 86 53276 22688 266745377</h1>
+					<p> He enjoys to teach students about compilers and C way too much and is a great tutor but remains a C-56837</p>
+					<div class="btn" id="playBtn">
+						<img src="images/play.png" id="icon">Watch Video
+					</div>
+			</div>
+	</div>
+
+<script>
+		//Adding a click event to display the video when we click on the button and so that we don't have a dead button
+		var backVideo = document.getElementById('backVideo');
+		var playBtn = document.getElementById('playBtn');
+		var icon = document.getElementById('icon');
+
+		//Listening to the event
+		playBtn.onclick = function(){
+				/*When II click on the button it will display the background video*/
+				backVideo.style.display = "block";
+
+				/*Adding the pause and stop functionality we are using what's called change of state in JS*/
+				if(backVideo.paused){
+					backVideo.play();
+					/*alternate between play/pause icon when I click on the button*/
+					icon.src="images/pause.png";
+				}
+
+				else{
+					backVideo.pause();
+					icon.src="images/play.png";
+				}
+		}
+
+
+</script>
+</body>
+</html>
