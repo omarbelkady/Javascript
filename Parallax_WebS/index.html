@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Parallax WS</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+<body>
+	<section>
+		<header>
+			<a href="#" class="logo">Low-Level is 56833 By 6342 56837</a>
+			<div class="toggle"></div>
+		</header>
+		<img src="bg.jpg" class="bg"> <!--Giving the images a class to be able to style them in css -->
+		<img src="bird.png" class="bird">
+		<div class="content">
+			<h2>2526 CODES 2 ALL DAY<br> AND ENJOYS<span> COMPILERS</span></h2>
+			<p>Lorem ipsum dolo sit amet, consectetur adipiscing elit, sed do eisumod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+			consequat.</p>
+			<a href="#">Sign Up Today</a>
+		</div>
+		<ul class="sci">
+			<li><a href="#"><img src="facebook.png"></a></li>
+			<li><a href="#"><img src="twitter.png"></a></li>
+			<li><a href="#"><img src="instagram.png"></a></li>
+		</ul>
+
+		<div class="textBlocks">
+			<div class="block">
+				<h3>2526 365697 86 2634 46 2</h3>
+				<!--........... TO COdE IN C-->
+				<p>2526 56837 86 97483 2 2633, ASSEMBLY,746867, 6224463 52648243, 266745377 TOO MUCH
+				43 56837 86 547836 86 829567 79437</p>
+			</div>
+			
+			<div class="block">
+				<h3>2526 56837 829567 79438</h3>
+				<!--........... TO COdE IN C-->
+				<p>63526 56837 C, ASSEMBLY, ASCII, COMPILERS, AND GOING TO T.SWIFT LIVE SHOWS.HE ENJOYS
+				TO 83224 678377 747 263 569 63835 52647</p>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		document.addEventListener("mousemove", function(e){
+			const bg = document.querySelector('.bg');
+			const bird = document.querySelector('.bird');
+			const content = document.querySelector('.content');
+
+			bg.style.width = 100+ e.pageX/100 + '%';
+			bg.style.height = 100 + e.pageX/100 + '%';
+
+			bird.style.right = 100 + e.pageX/2 + 'px';
+
+			content.style.left = 100 + e.pageX/2.5 + 'px';.
+		})
+	</script>
+
+</body>
+</html>
