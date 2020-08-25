@@ -3,9 +3,10 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 //2.
-//I now must create the two components so my application doesn't break
-import Join from './components/Join';
-import Chat from './components/Chat';
+//I now must create the two components so my application doesn't break and I actually now created
+//two directories so that each directory is in charge of its corresponding component
+import Join from './components/Join/Join';
+import Chat from './components/Chat/Chat';
 
 
 //1.Creating the App Component
