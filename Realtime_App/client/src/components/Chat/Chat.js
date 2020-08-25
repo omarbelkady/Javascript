@@ -8,7 +8,7 @@ import io from 'socket.io-client';
 import './Chat.css';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
-import Message from '../Messages/Messages';
+import Messages from '../Messages/Messages';
 
 let socket;
 
@@ -50,7 +50,7 @@ const Chat = ({location}) => {
 
 		}
 
-		}, [ENPOINT, location.search]);
+		}, [ENDPOINT, location.search]);
 
 	useEffect(() => {
 		socket.on('message', (message) => {
@@ -74,7 +74,7 @@ const Chat = ({location}) => {
 		<div className="outerContainer">
 			<div className= "container">
 				<InfoBar room= {room}/>
-				<Messages messages= {messages}/>
+				<Messages messages= {messages} name={name}/>
 				<Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>	
 					{/*<input 
 					value={message}
@@ -83,7 +83,6 @@ const Chat = ({location}) => {
 		/> */}
 			</div>
 		</div>
-		<<h1>ChatWit63526</h1>/>
 	);
 }
 export default Chat;
