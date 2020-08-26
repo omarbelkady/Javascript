@@ -27,7 +27,7 @@ const Chat = ({location}) => {
 	const [messages,setMessages] = useState([]);
 
 
-	const ENDPOINT = 'localhost:5000';
+	const ENDPOINT = '100:115:92:2:5000';
 
 
 	useEffect(() => {
@@ -39,8 +39,10 @@ const Chat = ({location}) => {
 
 		setRoom(room);
 
-		socket.emit('join', {name, room}, () => {
-		
+		socket.emit('join', {name, room}, (error) => {
+			if(error){
+				alert(error);
+			}
 		});
 
 		return () => {

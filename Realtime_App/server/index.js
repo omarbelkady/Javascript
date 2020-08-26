@@ -47,6 +47,8 @@ io.on('connection',(socket) => {
 
 		socket.join(user.room);
 
+		io.to(user.room).emit('roomData', {room: user.room, users: getUsersInRoom(user.room)})
+
 		//The callback in FE gets called everytime but if there are no errors the if statement in FE will not run because no errors
 		callback();
 	});
@@ -59,13 +61,20 @@ io.on('connection',(socket) => {
 		//specify room name and emit the event and we will send a payload
 		io.to(user.room).emit('message', {user: user.name, text: message});
 
+		//When User leaves send message to room participants
+		io.to(user.room).emit('roomData', {room: user.room, text: message});
+
 		//Call the callback to do sth in the FE
 		callback();
 	});
 
 	//implementing the disconnect function
 	socket.on('disconnect',()=>{
-		console.log("User Left Wipe Your Tears!");
+		const user = removeUser(socket.id);
+
+		if(user){
+			io.to(user.room).emit('message', {user: 'admin', text:`${user,name} has left `})
+		}
 	})
 });
 
