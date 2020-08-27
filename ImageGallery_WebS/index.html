@@ -1,0 +1,73 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>2526 56837 86 2633 46 2</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<img src="images/logo.png" class="logo">
+			<nav>
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">Office</a></li>
+					<li><a href="">Hotels</a></li>
+					<li><a href="">Contact Us</a></li>
+				</ul>
+			</nav>
+			<img src="images/menu.png" class="menu-icon">
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="text-box">
+					<h5>2526 56837 2</h5>
+					<h1><b>Low Level</b><br> Is What<b> He Enjoys</b></h1>
+				</div>
+				<img src="images/circle.png" class="small-icon1">
+				<img src="images/circle.png" class="small-icon2">
+				<img src="images/square.png" class="small-icon3">
+			</div>
+			<div class="col">
+				<div class="gallery-box">
+					<img src="images/pic2.jpg" alt="C-Lover" id="gallery">
+
+					<ul>
+						<li class="btn">6</li>
+						<li class="btn active">3</li>
+						<li class="btn">4</li>
+						<li class="btn">2</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<img src="images/circle.png" class="small-icon4">
+		<img src="images/square.png" class="small-icon5">
+	</div>
+
+<script>
+	var btn = document.getElementByClassName("btn");
+	var gallery = document.getElementById("gallery");
+
+	var images = new Array(
+		"images/pic1.jpg",
+		"images/pic2.jpg",
+		"images/pic3.jpg",
+		"images/pic4.jpg"
+	);
+
+	for(let i=0; i<btn.length;i++){
+		btn[i].onclick=function()
+		{
+			gallery.src= images[i];
+			let current = document.getElementByClassName("active");
+			current[0].className = current[0].className.replace("active", "");
+			this.className += " active";
+		};
+	}
+
+</script>
+
+
+</body>
+</html>

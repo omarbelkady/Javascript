@@ -1,0 +1,15 @@
+{
+  "name": "imagegallery_webs",
+  "version": "1.0.0",
+  "description": "Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Javascript"
+  },
+  "author": "",
+  "license": "ISC"
+}
