@@ -1,0 +1,23 @@
+{
+  "name": "coffee-shop",
+  "version": "0.0.0",
+  "server": false,
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "serve": "turbo devserver",
+    "test": "",
+    "build": "",
+    "postinstall": "turbo postinstall"
+  },
+  "dependencies": {
+    "turbo360": "^1.8.69",
+    "vertex360": "^0.29.17",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "rimraf": "^2.6.2"
+  },
+  "format": "vertex"
+}
