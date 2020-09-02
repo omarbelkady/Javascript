@@ -40,7 +40,7 @@ function dragOver(e){
 }
 
 
-function dragEnter(){
+function dragEnter(e){
 	e.preventDefault();
 	this.className += ' hovered';
 	//console.log("enter");
