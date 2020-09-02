@@ -27,11 +27,10 @@ vertex.configureApp(app, config)
 
 // import routes
 
-//I want to use my own import for the route
+//I want to use my own route import for the route
 const main = require('./routes/main');
 
 //Set the route
 app.use('/', main);
-
 
 module.exports = app
