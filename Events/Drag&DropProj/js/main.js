@@ -32,7 +32,7 @@ function dragEnd(){
 	this.className = 'fill';
 }
 
-function dragOver(){
+function dragOver(e){
 	//We pass in an event listener
 	e.preventDefault();
 	//This will call the drop method when I release the mouse
