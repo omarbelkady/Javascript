@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="UTF-8">
+	<title>Target &&&&&&&& CurrentTrg</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+		main{
+			background-color: rebeccapurple;
+			color: white;
+			padding: 1rem;
+		}
+
+		div{
+			background-color: #bada55;
+			color: #333;
+			padding: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<h1>Event.Target VS. event.currentTarget</h1>
+	<main>
+		Text Inside element
+		<div>This text is inside the &lt;div&gt; element</div>
+	</main>
+	<script>
+		document.querySelector('main').addEventListener('click',clicked);
+		document.querySelector('div').addEventListener('click',clicked);
+		function clicked(ev){
+			console.log("This click event is attached to ", ev.currentTarget.tagName, " and is currently at", ev.target.tagName);
+		}
+		/*
+	       		target always points to what comes after addEventListener
+			currentTarget tells us if the event is bubbling and where its at
+		*/
+	</script>
+</body>
+</html>
