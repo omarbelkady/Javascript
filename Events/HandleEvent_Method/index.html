@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>handleEvent</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+	
+	</style>
+</head>
+<body>
+	<h1>EventListener handleEvent</h1>
+	<button id="btn">Click This Button 968 6342 56837</button>
+	<script>
+		let obj= {
+				init: function(){
+							/*Instead of putting the name of function I am putting the this keyword
+								this keyword means this object will handle the events*/
+					document.querySelector("#btn").addEventListener('click',this);
+					document.querySelector("#btn").addEventListener('focus',this);
+					document.querySelector("#btn").addEventListener('blur', this);
+				},
+					/*handleEvent is built-in*/
+				handleEvent: function(ev){
+					/*Not having a ev as a parameter will raise a reference error*/
+					/*I can have infinite number of this and they will all go through this function I use a switch statement to specify what behavior I want*/
+					switch(ev.type)
+					{
+						case 'click':
+							/*when click event is raised call the this.Something method*/
+							this.something(ev);
+							break;
+						case 'focus':
+							this.something(ev);
+							break;
+						case 'blur':
+							this.something(ev);
+							break;
+						case 'explode':
+							break;
+					}
+				},
+				something: function(ev){
+					console.log("Btn was", ev.type, "-ed. 968 6342 56837");
+				}
+			}
+		//Getting things fired
+		obj.init();
+	</script>
+</body>
+</html>
