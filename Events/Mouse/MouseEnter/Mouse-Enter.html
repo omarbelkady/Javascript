@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Enter Vs. Over</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+
+		p{
+			padding: 1rem;
+			cursor: pointer;
+			border: 2px solid #000;
+		}
+
+		div{
+			float: left;
+			overflow: auto;
+			box-sizing: border-box;
+			width: 50%;
+			border: 1px solid #aaa;
+			padding: 1rem;
+			font-family: "Aclonica", sans-serif;
+		}
+
+		.enter{
+			background-color: yellow;
+			color: blue;
+		}
+
+		.over{
+			background-color: #1C4A49;
+			color: red;
+		}
+
+		.orange{
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<h1>MouseEnter VS MouseLeave Event</h1>
+	<div class="enter">
+		<p>MouseEnter and MouseLeave Control Here</p>
+		<p>MY First ParaG</p>
+		<p>My Second Parag</p>
+	</div>
+	<div class="over">
+		<p>MouseOver and MouseOut</p>
+		<p>First Parag</p>
+		<p>Second Parag</p>
+	</div>
+	<script>
+		document.querySelector('.enter p').addEventListener('mouseenter', goingIn);
+		document.querySelector('.enter p').addEventListener('mouseleave', goingOut);
+		function goingIn(ev){
+			ev.currentTarget.style.borderColor='red';
+			console.log('Mouseenter Event Paragraph');
+		}
+		function goingOut(ev){
+			ev.currentTarget.style.borderColor="green";
+			console.log('MouseLeave Event Paragraph');
+		}
+		
+		document.querySelector('.over p').addEventListener('mouseover', goingOver);
+		document.querySelector('.enter p').addEventListener('mouseout', goingOutside);
+		function goingOver(ev){
+			ev.currentTarget.style.borderColor='Yellow';
+			console.log('MouseOver Event Paragraph');
+		}
+		function goingOutside(ev){
+			ev.currentTarget.style.borderColor="blue";
+			console.log('MouseOut Event Paragraph');
+		}
+
+		document.querySelector('.enter').addEventListener('mouseenter',function(event){
+					event.currentTarget.classList.add('orange');
+					console.log("The mouse enter div event. Just added Green");
+		});
+
+
+		document.querySelector('.enter').addEventListener('mouseleave',function(event){
+					event.currentTarget.classList.remove('orange');
+					console.log("The mouse leave div event. Just removed Orange");
+		});
+
+		document.querySelector('.over').addEventListener('mouseout',function(event){
+					event.currentTarget.classList.remove('orange');
+					console.log("The mouse enter div event. Just removed Orange");
+		});
+
+		document.querySelector('.over').addEventListener('mouseover',function(event){
+					event.currentTarget.classList.add('orange');
+					console.log("The mouse over div event. Just added Orange");
+		});
+
+
+	</script>
+</body>
+</html>
