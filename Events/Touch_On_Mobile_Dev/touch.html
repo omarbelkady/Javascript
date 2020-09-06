@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+	<h1>Touch Events 968 2-56837</h1>
+	<p> This paragraph is waiting to be touched and interacted with. This can only be triggered by a touch device(e.g. phone, tablet). Using a mouse will not raise the event</p>
+	<script>
+		//touch event types: touchstart, touchend, touchmove, touchcancel
+		document.querySelector('p').addEventListener('touchstart', my_touch_loc);
+		document.querySelector('p').addEventListener('touchend', my_touch_loc);
+		document.querySelector('p').addEventListener('touchmove', my_touch_loc);
+
+		//event function lets me know where the touch took place
+		function my_touch_loc(ev){
+			console.log(ev.touches, ev.type);
+		}
+	</script>
+<body>
