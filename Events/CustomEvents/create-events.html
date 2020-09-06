@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create Events</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+
+
+	</style>
+</head>
+<body>
+	<h1>Making Events</h1>
+	<main>
+
+	</main>
+	<script>
+		let born = new Event('born');
+
+		let died = new CustomEvent('died',{detail:Date.now()});
+
+
+		document.addEventListener('DOMContentLoaded', function() {
+					let m = document.querySelector('main');
+					addParagraph(m, "Here is a paragraph");
+					addParagraph(m, "A new review is coming out soon");
+					//When clicking on the main element I want to remove the first paragraph
+					
+					m.addEventListener('click', function(ev){
+						removeParagraph(m, m.firstElementChild);
+					})
+		});
+		
+		function addParagraph(parent, sampleText){
+					let myparag = document.createElement('p');
+					myparag.textContent = sampleText;
+					//listening for the event
+					myparag.addEventListener('born', isBorn);
+					myparag.addEventListener('died', Died);
+					myparag.dispatchEvent(born);
+					parent.appendChild(myparag);
+		}
+
+		
+		function removeParagraph(parent, myparag){
+			myparag.dispatchEvent(died);
+			parent.removeChild(myparag);
+		}
+	
+		function isBorn(my_event){
+			console.log(my_event.type, my_event.target);
+		}
+		
+		function Died(my_event){
+			console.log(my_event.type, my_event.target, my_event.detail);
+			//removing the listener
+			my_event.target.removeEventListener('born', isBorn);
+			my_event.target.removeEventListener('died', Died);
+
+			//To place isBorn and Dead in garbage collection
+		}
+
+	</script>
+
+</body>
+</html>
