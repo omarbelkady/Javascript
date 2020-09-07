@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selecting The Event Targets</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		html{
+			font-size: 10px;
+			line-height: 1.5;
+			font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+			sans-serif;
+		}
+
+		body{
+			padding: 1rem 2rem;
+		}
+
+		.list-view{
+			list-style: none;
+		}
+
+		.list-item{
+			font-size: 2rem;
+			line-height: 2rem;
+			font-weight: 100;
+			padding: 1.5rem 1rem;
+		}
+		
+		.list-item span{
+			font-weight: 500;
+		}
+
+
+	</style>
+</head>
+<body>
+	<h1>Choosing The Event Targs</h1>
+	<h2>Nothing has been selected yet</h2>
+	<main>
+		<ul class="list-view">
+			<li class="list-item" data-id="1" data-name="Nelan">2-568: <span> Nelan</span></li>
+			<li class="list-item" data-id="3" data-name="C">C-56837 <span> C</span></li>
+			<li class="list-item" data-id="6" data-name="Pintos">Pintos All The Way and x86 architecture <span> Pintos</span></li>
+			<li class="list-item" data-id="8" data-name="Assembly">Assembly <span> Nelan</span></li>
+			<li class="list-item" data-id="11" data-name="Machine Language">Machine Language <span> Nelan</span></li>
+			<li class="list-item" data-id="13" data-name="Pascal">Pascal <span> Nelan's 2nd fav Lang</span></li>
+			<li class="list-item" data-id="15" data-name="Objective-C">Objective-C <span> What-He-Code All DAy</span></li>
+			<li class="list-item" data-id="18" data-name="PHP">PHP <span> Super Easy for him to Learn</span></li>
+			<li class="list-item" data-id="21" data-name="Perl">Perl: <span> His Goto Prog Lang</span></li>
+		</ul>
+	</main>
+	<script>
+			let fireThisWhenLoading = function(){
+						//Adding an Event Listener that will listen to elements on the page
+						document.querySelector('.list-view').addEventListener('click', onClicky);
+
+						let  mylist = document.querySelectorAll('.list-item');
+						mylist.forEach(li =>{
+						});
+
+						let spanny = document.querySelectorAll('.list-item span');
+			}
+
+			let onClicky = function(my_ev){
+						alert(my_ev.target.tagName);
+						let li = my_ev.target;
+						if(my_ev.target.tagName == 'SPAN'){
+							li = my_ev.target.parentElement;
+						}
+						//to differentiate whether they clicked on the li or li number
+						let id = li.getAttribute('data-id');
+						let nm = li.getAttribute('data-name');
+						let h2 = document.querySelectorAll('h2');
+						h2.textContent = id+' : '+nm;
+			}
+			
+			let onClick = function(eventy){
+						//Click event
+						alert('target '+eventy.target + ' and currentTarget' + eventy.currentTarget);
+
+						let id = eventy.currentTarget.getAttribute('data-id');
+						let nm = eventy.currentTarget.getAttribute('data-name');
+						let h2 = document.querySelector('h2');
+						h2.textContent = id + " :  "+ nm;
+			}
+			document.addEventListener('DOMContentLoaded', fireThisWhenLoading);
+	</script>
+</body>
+</html>
