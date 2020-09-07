@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>How To Remove Event Listeners in JS</title>
+	<meta name="viewport" content="width=device-width">
+
+	<style>
+		.red{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Posts of 56837 AKA 2-56837</h1>
+	<main>
+		<ul class="list-view">
+			<li class="list-item">My First Post</li>
+			<li class="list-item">My Second Post</li>
+		</ul>
+	
+	</main>
+	<script>
+		let getThingsFiredUp = function(){
+			//adding a click listening to existing posts
+			document.querySelectorAll('.list-item').forEach(li => li.addEventListener('click', randomFunc));
+			//place a list item every 2 sec.
+			setInterval(addPostToPage, 1000);
+		}
+		let randomFunc = function(myev){
+			let li=myev.currentTarget;
+			li.className = 'red';
+
+			setTimeout((function(){
+				this.removeEventListener('click', randomFunc);
+				//remove the post after 0.5 sec.
+				this.parentElement.removeChild(this);
+			}).bind(li),500);
+			li = null;
+		}
+		let addPostToPage = function(){
+			let ul = document.querySelector('.list-view');
+			let li = document.createElement('li');
+			li.className = 'list-item';
+			li.textContent = `PostNum ${Date.now()}`;
+			li.addEventListener('click', randomFunc);
+			ul.appendChild(li);
+		}
+		document.addEventListener('DOMContentLoaded', getThingsFiredUp);
+	</script>
+</body>
+</html>
