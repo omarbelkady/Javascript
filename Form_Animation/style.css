@@ -7,7 +7,7 @@
 body{
 	height: 100vh;
 	display: flex;
-	background: url("i.pinimg.com/originals/2c/00/8c/2c008cdf7c1a4bb5a99fb1570c1f13a0.jpg");
+	background: url("https://i.pinimg.com/originals/2c/00/8c/2c008cdf7c1a4bb5a99fb1570c1f13a0.jpg");
 	transition: background 0.5s ease;
 	position: relative;
 }
