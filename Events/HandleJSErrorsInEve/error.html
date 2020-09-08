@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Window Error Event Display Popup</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+		.nelan{
+			color: blue;
+			text-align: center;
+			letter-spacing: 3px;
+		}
+
+
+	</style>
+
+	<!-- -->
+</head>
+	<h1 class="nelan"> Remember 2526 56837 569 53835 ALL DAY EVERYDAY AND PINTOS&&C!!!</h1>
+	<p> When the window object throws an Error Event which can let us handle any errors which happens on the page. This is better than wrapping the whole page in a try and catch block</p>
+	<p><img src="dfadffafkafkafa" id="badImg" alt="no alt" /></p>
+	<!-- BY DEFAULT IF I TRY to load a script that is from a different domain than the one I am on. The security
+	settings of the browser(any) they will protect you by default and will not leak any potential information
+	of the script. We hide it by adding the keyword crossorigin to the end of the url and giving it a value of
+	anonymous which tells the browser to not send cookies, http credentials, etc to the server to request this file
+	Failure to place the crossorigin and giving it a value of anonymous and thereis an error within my script
+	then all we will get back is script error instead of syntax error or uncaught reference error. Always put the key value if we are using the external scripts-->
+	<script src = "https://www.learncbecauseAlanLovesIt.com/" crossorigin="anonymous"></script>
+
+			<script>
+				//Waiting for my page to load
+				document.addEventListener('DOMContentLoaded',function(){
+					let img = document.getElementById('badImg');
+					img.onerror = function(){
+						console.warn("Image Was not loaded 968 6342 56837");
+					}
+
+				})
+				//within my page if there is an error let me know better than try catch
+				/*window.onerror = function(msg,url,line,col,err){
+					console.log(msg,url,line,col,err);
+				}
+			       */
+				/*Raise the event by type if it is an error*/
+				window.addEventListener('error', function(ev){
+					console.log(ev.type);
+					//open a warning within the console
+					console.warn(ev);				
+					//hide the error from showing up in the console
+					ev.preventDefault();
+				})
+
+
+
+				/*try{
+					function first_func(){
+						referenceFIRST.error.causing();
+					}
+
+					function second_func(){
+						referenceSECOND.error.causing();
+					}
+
+				}
+
+				catch(err){
+					console.error(err);
+				}*/
+			</script>
+</body>
+</html>
