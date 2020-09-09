@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebPages in MultipleLangs</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        section{
+            width: 400px;
+            padding: 0.5rem 1rem;
+            margin: 1rem;
+            border: 1px solid #aaa;
+            font: 1rem/1.5 sans-serif;
+        }
+        h1{
+            padding: 1rem;
+            border-bottom: 0.5rem solid #aaa;
+            letter-spacing: 3px;
+        }
+        
+        [lang]{
+            unicode-bidi: bidi-override;
+            direction:ltr;
+        }
+        [lang="ar"]{
+            direction: rtl;
+        }
+    </style>
+    <!--
+    https://www.w3.org/International/questions/qa-i18n
+    i18n - internationalization: 
+    Internationalization is the design and development of a product, application or document content that enables easy localization for target audiences that vary in culture, region, or language.
+    
+    l10n - localization:
+    -->
+</head>
+<body>
+    <h1>More Than Just English</h1>
+    <section lang="ar">
+        <p title="63526 is 2 2-56837"> الشخص يحب اللغة البرامج التكنولوجية س</p>
+    </section>
+    <section lang="fr">
+        <p title="C-Lover*">Alan adore apprendre des languages qui sont de bas niveau</p>
+    </section>
+    <section lang="es">
+        <p title="ama C">La persona Nelan es un amante de C</p>
+    </section>
+    <script></script>
+</body>
+</html>
