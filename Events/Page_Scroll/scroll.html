@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Ways Of Scrolling</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="main.css" />
+	<style>
+		h1{
+			cursor: pointer;/*meaning clickable*/
+			font-size: 2.5rem;
+			color: blue;
+			text-shadow: 2px 2px 2px red;
+			background-color: hsla(90,30%,70%,0.5);
+		}
+		main{
+			transition: transform 1s ease-in;
+			position: relative;
+			z-index: 1;
+		}
+
+		main.up{
+			transform: translateY(-600px);
+		}
+		
+		p::before{
+			content: attr(data-num);
+			font-size: 2.6rem;
+			line-height: 3rem;
+			height: 3rem;
+			width: 3rem;
+			text-align: center;
+			margin-right: 1rem;
+			display: inline-block;
+			transform: rotate(-20deg);
+			background-color: #666;
+			color: #eee;
+			border-radius: 50%;
+		}
+
+		p:nth-child(odd)::before{
+			transform: rotate(25deg);
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>JS Scrolling Meths to Get To C Prog Which 63526 56837 86 Prog</h1>
+	</header>
+	<main></main>
+	<script>
+		let h1 = document.querySelector('h1');
+		h1.addEventListener('click', (ev) =>{
+			//scrollBy(x,y) scrollTo(x,y)
+			//scrollX(x) scrollY(y)
+			//onscroll
+			console.group();
+			console.groupEnd();
+			document.querySelector('main').classList.toggle('up')
+		});
+
+		window.addEventListener('scroll', (ev)=>{
+			console.group();
+			console.groupEnd();
+		})
+	</script>
+</body>
+</html>
