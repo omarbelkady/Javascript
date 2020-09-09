@@ -54,13 +54,26 @@ body{
 div.innactive{
 	opacity: 0;/*fully transparent*/
 	pointer-events: none;/*This we cannot click on the elements*/
-	transform: translate(-50,50%);
+	transform: translate(-50%,50%);
 }
 
 div.active{
 	opacity: 1;/*fully opaque*/
 	pointer-events: all;
-	transform: translate(-50,-50%);/*Go back to its original position*/
+	transform: translate(-50%,-50%);/*Go back to its original position*/
 }
 
+@keyframes shake{
+	0%{
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
 
+	50%{
+		transform: translate(-50%,-50%) rotate(10deg);
+	}
+
+	100%{
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+
+}
