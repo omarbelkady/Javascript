@@ -39,3 +39,5 @@ function greet(name,cb_func)
 
 greet("Nelan_THE_C_Lover",morning);
 greet("6342_56837", afternoon);
+greet("Nelan is a CS-429 FanBoy/56837", morning);
+greet("\nNelan is a LLFN where FN stands for Fan Boy!!!!!", afternoon);
