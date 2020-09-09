@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To Uppercase</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Changing The Text As I Type</h1>
+	</header>
+	<main>
+		<input type="text" id="txt" style="font-size: 30px" />
+	</main>
+	<script>
+		document.addEventListener('DOMContentLoaded', function(){
+			let txt = document.getElementById('txt');
+			txt.addEventListener("keydown", upFunc);
+			//keydown: when I press the key with my finger can be anywhere on the page
+			
+			txt.addEventListener("keypress", upFunc);
+			//keypress: as I press and release the key can be anywhere on the page
+		
+			txt.addEventListener("keyup", upFunc);
+			//keyup: as I release the key can be anywhere on the page
+
+			txt.addEventListener("input", upFunc);
+			//input: specifically tied to form element and gives us full access to value but no char code access
+		});
+
+		function upFunc(my_ev){
+			let a_num = my_ev.charCode;//returns the character code of the key that was pressed
+			let a_letter = String.fromCharCode(a_num);
+			console.log(my_ev.type, a_num, a_letter, my_ev.target.value);
+			my_ev.target.value = my_ev.target.value.toUpperCase();
+		}
+
+	</script>
+</body>
+</html>
