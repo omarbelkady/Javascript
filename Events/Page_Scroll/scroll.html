@@ -63,17 +63,26 @@
 	</main>
 	<script>
 		let h1 = document.querySelector('h1');
-		h1.addEventListener('click', (ev) =>{
-			//scrollBy(x,y) scrollTo(x,y)
-			//scrollX(x) scrollY(y)
+		h1.addEventListener('click', (my_ev) =>{
+			//scrollBy(x,y) FYI: x and y are just ints for home much you want to move left/right and up/down
+			//scrollTo(x,y)   Give a position to where you want to move. 0,0 the origin is at the top left of the webpage
+			//scrollX(x) scrollY(y) scrollX scrollY is scrollBy except it is broken into two pieces
 			//onscroll
-			console.group();
+			//console.group();
+			console.log('client', my_ev.clientX, my_ev.clientY);
+				//will show where I clicked on the screen
+			console.log('page', my_ev.pageX, my_ev.pageY);
+			console.log('offset', h1.offsetLeft, h1.offsetTop);
 			console.groupEnd();
+			window.scrollBy(0, 600);
 			document.querySelector('main').classList.toggle('up')
 		});
 
-		window.addEventListener('scroll', (ev)=>{
+		window.addEventListener('scroll', (my_ev)=>{
+			//allows me to put alot of console log statements together
 			console.group();
+			console.log('client', my_ev.clientX, my_ev.clientY);
+			console.log('page', my_ev.pageX, my_ev.pageY);
 			console.groupEnd();
 		})
 	</script>

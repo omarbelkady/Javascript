@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>User Input to JSO</title>
+
+	<style>
+	</style>
+</head>
+<body>
+	<form>
+		<div class="formBox">
+			<label for="title">Title Dude</title>
+			<input type="text" id="title" placeholder="Title"/>
+		</div>
+
+		<div class="formBox">
+			<label for="Year">Year 2 Came Out</title>
+			<input type="number" id="year" placeholder="Year"/>
+		</div>
+
+		<div class="formBox">
+			<button id="btn">Click To Add</button>
+		</div>
+
+		<div id="msg">
+			<pre></pre>
+		</div>
+	</form>
+	<script>
+		let favProgLangs= [];
+		//example {id:252656837746867, title: 'C-Prog', year: 1972
+		const addProg = (my_ev) =>{
+					//Prevent form submission because data will be lost
+			my_ev.preventDefault(); //Prevent form submission
+			let progLang = {
+				id: number,
+				title: document.getElementById('title').value,
+				year: document.getElementById('year').value
+			}
+			favProgLangs.push(progLang);
+			document.forms[0].reset();//clear form for next submission
+
+
+			//display
+			console.warn('added 2', {favProgLangs});
+			let progLangInit = document.querySelector("#msg pre");
+			progLangInit.textContent = "\n"+JSON.stringify(favProgLangs, '\t',3);
+		}
+		document.addEventListener('DOMContentLoaded', ()=>{
+						//calling an event based on a func
+			document.getElementById('btn').addEventListener('click', addProg);
+		});
+	</script>
+</body>
+</html>
