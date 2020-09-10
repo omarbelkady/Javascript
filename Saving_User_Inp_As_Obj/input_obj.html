@@ -33,26 +33,32 @@
 		let favProgLangs= [];
 		//example {id:252656837746867, title: 'C-Prog', year: 1972
 		const addProg = (my_ev) =>{
-					//Prevent form submission because data will be lost
+			//Prevent form submission because data will be lost
 			my_ev.preventDefault(); //Prevent form submission
 			let progLang = {
-				id: number,
+				id: Date.now(),
 				title: document.getElementById('title').value,
 				year: document.getElementById('year').value
 			}
 			favProgLangs.push(progLang);
 			document.forms[0].reset();//clear form for next submission
-
+			//same as line 44 just more modern
+			//document.querySelector('form').reset();
 
 			//display
 			console.warn('added 2', {favProgLangs});
 			let progLangInit = document.querySelector("#msg pre");
 			progLangInit.textContent = "\n"+JSON.stringify(favProgLangs, '\t',3);
+
+			//saving to storage and everything must be formated as a string
+			localStorage.setItem('TheFavProgLangListOf256837', JSON.stringify(favProgLangs));
 		}
 		document.addEventListener('DOMContentLoaded', ()=>{
-						//calling an event based on a func
+			//calling an event based on a func
 			document.getElementById('btn').addEventListener('click', addProg);
 		});
+
+		//Upon Succession of Running This Program if I goto DevTools==> Application Tab==> Local Storage I will find the objects stored there
 	</script>
 </body>
 </html>
