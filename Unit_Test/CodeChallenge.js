@@ -14,3 +14,5 @@ assert.equal(validator(1), false);
 assert.equal(validator(2121), true);
 assert.equal(validator(1230), true);
 assert.equal(validator(56739), true);
+//first param: function/computation, secondparameter: result, optional third: message you wish to print
+console.log("All tests passed successfully Now 46 53278 A LLPL, C AND (NELANFAV)Machine Language");
