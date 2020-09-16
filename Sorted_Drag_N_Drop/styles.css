@@ -1,0 +1,23 @@
+body{
+	margin: 0;
+}
+
+.container{
+	/*giving the container a black background*/
+	background-color: #333;
+	padding: 1rem;
+	margin-top: 1rem;
+}
+
+.draggable{
+	padding: 1rem;
+	background-color: blue;
+	border: 1px solid red;
+	/*be able to move the elements*/
+	cursor: move;
+}
+
+
+.draggable.dragging{
+	opacity: 0.5;
+}
