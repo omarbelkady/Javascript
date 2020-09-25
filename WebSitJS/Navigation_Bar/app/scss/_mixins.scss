@@ -1,0 +1,24 @@
+//Breakpoints
+@media(min-width: 64em){
+	//styles
+}
+
+//Use this style for this size and bigger 640px, 1024px, 1400px and target this viewport and up
+$breakpoints-up:("medium": "40em", "large":"64em", "xlarge": "87.5em");
+
+//Target this viewport and down 639px, 1023px, 1399px
+$breakpoints-up:("small": "39.9375em","medium": "63.9375em", "large": "87.4375");
+
+
+@mixin breakpoint-up($size){
+	@media(min-width: map-get($breakpoints-up, $size)){
+		@content;
+	}
+}
+
+
+@mixin breakpoint-down($size){
+	@media(max-width: map-get($breakpoints-down, $size)){
+		@content;
+	}
+}
