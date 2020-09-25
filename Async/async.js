@@ -1,3 +1,6 @@
+//Asynchronous code example: Start now finish later
+//Synchronous code example: Here are 8 tasks to complete: You can work on one task at a time from top of the time
+
 console.log("Async Program");
 
 //setTimeout function which takes a callback and there is a delay of 3 seconds.
