@@ -1,3 +1,4 @@
+
 ## Vanilla Javascript Terminology And Basics
 
 ### What Technologies are used to make the FE communicate with the BE:
@@ -7,18 +8,27 @@
 
 ### Operators
 1- === : When using this comparison operator we are comparing value and the data type
+
 2- != : Not Equal To
+
 3- !== : Not Equal To in Value and Not Equal In Type
+
 4- > : Strictly Greater Than
+
 5- < : Strictly Less Than
+
 6- <= : Less Than Or Equal To
+
 7- >= : Greater Than Or Equal To
+
 8- ? : Ternary Operator aka conditional if statement
 
 
 ### Logical Operators
 1- &&: Logical And Operator
+
 2- ||: Logical Or Operator
+
 3- !: Logical Not Operator
 
 
@@ -46,13 +56,13 @@
 - Objects:
 ```js
 var nelan= {
-firstName= "Alan",
-lastName= "Ngo",
-favLang = "Cobol",
-favActivity = "Writing Low Level Code",
-favParadigm = "Imperative",
-favOS = "Pintos",
-IdealJob = "Machine Code Dev"
+	firstName= "Alan",
+	lastName= "Ngo",
+	favLang = "Cobol",
+	favActivity = "Writing Low Level Code",
+	favParadigm = "Imperative",
+	favOS = "Pintos",
+	idealJob = "Machine Code Dev"
 }
 ```
 
@@ -69,7 +79,7 @@ IdealJob = "Machine Code Dev"
 - confirm(): Opens up a yes/no dialog box and returns a boolean depending on the user click
 - console.log(): Logs info to the browser console good for debugging
 - document.write(): Write directly to the HTML doc
-- prompty(): Creates a dialogue for user input
+- prompt(): Creates a dialogue for user input
 
 
 ### Global Functions in JS
@@ -80,4 +90,5 @@ IdealJob = "Machine Code Dev"
 5- eval(): Evaluates JS code represented by a str
 6- isFinite() - boolean return which evals to T or F depending on the arg passed in is finite or not
 7- isNaN() - boolean return which evals to T or F depending on the arg passed in is not a number or the opp
+
 8- Number() - returns a number which is converted from the argument passed in to the function
