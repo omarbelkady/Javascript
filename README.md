@@ -84,11 +84,17 @@ var nelan= {
 
 ### Global Functions in JS
 1- decodeURI():  Decodes a Uniform Resource Identifier(URI) which is created by encodeURI func
+
 2- decodeURIComponent():  Decodes a Uniform Resource Identifier(URI) component
+
 3- encodeURI():  Encodes a Uniform Resource Identifier(URI) to UTF-8
+
 4- encodeURIComponent()  Encodes a Uniform Resource Identifier(URI) component
+
 5- eval(): Evaluates JS code represented by a str
+
 6- isFinite() - boolean return which evals to T or F depending on the arg passed in is finite or not
+
 7- isNaN() - boolean return which evals to T or F depending on the arg passed in is not a number or the opp
 
 8- Number() - returns a number which is converted from the argument passed in to the function
