@@ -1,0 +1,98 @@
+@import url("http://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section h2{
+    color: #fff;
+    font-size: 100px;
+    font-family: "Bebas Neue", cursive;
+    letter-spacing: 2px;
+}
+
+#home{
+    background-color: #ff7a00;
+}
+
+#about{
+    background-color: #67ffe7;
+}
+
+#services{
+    background-color: #ffa855;
+}
+
+#contact{
+    background-color: #00ffa7;
+}
+
+.sidebar{
+    position: fixed;
+    top:50%;
+    transform: translateY(-50%);
+    background: #414141;
+}
+
+.nav-item{
+    position: relative;
+}
+
+.nav-item:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.nav-link{
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.nav-link i{
+
+    width: 70px; 
+    height: 70px;
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #414141; 
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.nav-link .title{
+    position: absolute;
+    background-color: #414141;
+    height: 100%;
+    padding-right: 65px;
+    padding-left: 20px;
+    line-height: 65px;
+    transform: translateX(-100%);
+    transition: all 0.3s;
+    z-index: -1;
+
+}
+
+.nav-item:hover i{
+    transform: scale(1.1);
+    box-shadow: 0px 0 20px rgba(0,0,0,0.8);
+}
+
+
+.nav-item:hover .title{
+    transform: translateX(0);
+}
